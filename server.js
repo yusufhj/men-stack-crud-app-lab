@@ -7,8 +7,8 @@ const path = require("path")
 
 
 const app = express();
-const Plant = require("./models/plant");
-const plantsCtrl = require('./controllers/plants')
+const Player = require("./models/player");
+const playersCtrl = require('./controllers/players')
 
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
@@ -20,9 +20,21 @@ mongoose.connection.on("connected", () => {
     console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
 
-app.get("/", (req, res) => {
-    res.send("Hello, plants!");
-});
+app.get("/", playersCtrl.home);
+
+app.get("/players", playersCtrl.indexPlayer);
+
+app.get("/players/new", playersCtrl.newPlayer);
+
+app.post("/players", playersCtrl.createPlayer);
+
+app.get("/players/:id", playersCtrl.showPlayer);
+
+app.get("/players/:id/edit", playersCtrl.editPlayer);
+
+app.put("/players/:id", playersCtrl.updatePlayer);
+
+app.delete("/players/:id", playersCtrl.deletePlayer);
 
 app.listen(3000, () => {
     console.log("Listening on port 3000");
