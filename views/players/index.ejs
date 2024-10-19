@@ -3,10 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Players</title>
+    <title>All Players List</title>
 </head>
 <body>
-    <h1>Players</h1>
-    <p>list players amd details</p>
+    <h1>All Players List</h1>
+    <a href="/players/new">Add New Player</a>
+    <ul>
+        <% players.forEach(function(player) { %>
+            <li>
+                <a href="/players/<%= player.id %>"><%= player.name %></a>
+                <a href="/players/<%= player.id %>/edit">Edit</a>
+                <form action="/players/<%= player.id %>?_method=DELETE" method="POST">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+
+    <a href="/">Back To Home</a>
 </body>
 </html>

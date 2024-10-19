@@ -6,7 +6,8 @@ const home = async (req, res) => {
 
 // get all players request
 const indexPlayer = async (req, res) => {
-    res.render('players/index.ejs')
+    const allPlayers = await Player.find()
+    res.render('players/index.ejs', { players: allPlayers })
 }
 
 // get new player page request

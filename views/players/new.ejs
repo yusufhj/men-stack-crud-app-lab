@@ -7,8 +7,29 @@
 </head>
 <body>
     <h1>Add New Player</h1>
-    <form action="">
-        
+    <!-- const playerSchema = new mongoose.Schema({
+    name: { type: String, required: true },
+    rating: { type: Number, required: true },
+    nationality: {type: String, required: true},
+    team: { type: String, required: true},
+    isCurrentlyPlaying: {type: Boolean, required: true},
+    image: String,
+    });
+   -->
+    <form action="/players" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="rating">Rating:</label>
+        <input type="number" id="rating" name="rating" required>
+        <label for="nationality">Nationality:</label>
+        <input type="text" id="nationality" name="nationality" required>
+        <label for="team">Team:</label>
+        <input type="text" id="team" name="team" required>
+        <label for="isCurrentlyPlaying">Is Currently Playing:</label>
+        <input type="checkbox" id="isCurrentlyPlaying" name="isCurrentlyPlaying" required>
+        <label for="image">Image:</label>
+        <input type="text" id="image" name="image">
+        <button type="submit">Add Player</button>
     </form>
 </body>
 </html>
