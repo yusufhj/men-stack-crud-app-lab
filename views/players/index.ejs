@@ -14,12 +14,14 @@
         <% players.forEach(function(player) { %>
             <li>
                 <a href="/players/<%= player.id %>" id="pName"><%= player.name %></a>
-                <p>Nationality: <%= player.nationality %></p>
-                <p>Team: <%= player.team %></p>
-                <a href="/players/<%= player.id %>/edit" id="link">Edit</a>
-                <form action="/players/<%= player.id %>?_method=DELETE" method="POST">
-                    <button type="submit">Delete</button>
-                </form>
+                <p><strong>Nationality:</strong> <%= player.nationality %></p>
+                <p> <strong>Team:</strong> <%= player.team %></p>
+                <div id="controls">
+                    <a href="/players/<%= player.id %>/edit" id="link">Edit</a>
+                    <form action="/players/<%= player.id %>?_method=DELETE" method="POST">
+                        <button type="submit">Delete</button>
+                    </form>
+                </div>
             </li>
         <% }); %>
     </ul>

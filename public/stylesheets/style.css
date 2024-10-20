@@ -19,3 +19,30 @@
     font-size: 24px;
     font-weight: bold;
 }
+
+button {
+    padding: 5px 10px;
+    color: white;
+    background-color: #ff0000;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #cc0000;
+    cursor: pointer;
+}
+
+#controls {
+    display: flex;
+    margin-top: 20px;
+}
+
+img {
+    width: 50vw;
+    height: auto;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+}
