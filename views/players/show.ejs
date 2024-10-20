@@ -3,10 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Player Name</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title><%= player.name %></title>
 </head>
 <body>
-    <h1>Player Name</h1>
-    <p>Player details</p>
+    <a href="/players" id="link">Back</a>
+    <h1>Player Name: <%= player.name %></h1>
+    <img src="<%= player.image %>">
+    <p>Rating: <%= player.rating %></p>
+    <p>Nationality: <%= player.nationality %></p>
+    <p>Team: <%= player.team %></p>
+    <p>Is Currently Playing: <%= player.isCurrentlyPlaying %></p>
+    <a href="/players/<%= player._id %>/edit" id="link">Edit</a>
+    <form action="/players/<%= player._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+    </form>
 </body>
 </html>

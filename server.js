@@ -7,7 +7,7 @@ const path = require("path")
 
 
 const app = express();
-const Player = require("./models/player");
+// const Player = require("./models/player");
 const playersCtrl = require('./controllers/players')
 
 app.use(express.urlencoded({ extended: false }));
